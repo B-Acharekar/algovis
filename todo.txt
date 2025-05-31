@@ -1,0 +1,34 @@
+# ✅ AlgoVis – Data Structure Visualizer – Task List
+
+👨‍💻 Bhushan – Logic, Animation, JS Core
+🧑‍🎨 Vedant – Layout, UI, Basic JS
+
+[Layout & UI] – (Vedant)
+☐ Create basic HTML layout (buttons, containers for visualization)
+☐ Add sections for Stack, Queue, Linked List
+☐ Style layout using Bootstrap or Tailwind
+
+[Stack Features]
+☐ (Vedant) Create "Push" and "Pop" buttons in HTML
+☐ (Bhushan) Implement JS logic for stack (push/pop)
+☐ (Bhushan) Visualize vertical stack and animate push/pop
+
+[Queue Features]
+☐ (Vedant) Create "Enqueue" and "Dequeue" buttons
+☐ (Bhushan) Implement JS logic for queue (enqueue/dequeue)
+☐ (Bhushan) Animate horizontal movement (FIFO queue)
+
+[Linked List Features]
+☐ (Vedant) Build buttons for "Insert", "Delete", "Search"
+☐ (Bhushan) Implement linked list logic
+☐ (Bhushan) Animate nodes and arrow connections
+
+[General UX/UI] – (Vedant)
+☐ Add speed control slider (optional)
+☐ Add reset buttons for each section
+☐ Optional: Dark mode toggle
+
+[Testing & Deployment]
+☐ (Both) Test all operations
+☐ (Vedant) Mobile-friendly UI tweaks
+☐ (Bhushan) Deploy to GitHub Pages / Netlify / Vercel
