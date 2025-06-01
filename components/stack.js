@@ -1,4 +1,31 @@
-let stack = [];
+class Stack{
+    constructor() {
+        this.items = [];
+    }
+
+    push(element){
+        this.items.push(element);
+    }
+
+    pop() {
+        if (this.isEmpty()) {
+        return "Stack is empty"; 
+        }
+        return this.items.pop();
+    }
+
+    clear() {
+        this.items = [];  
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+
+}
+
+const stack = new Stack();
 
 function pushStack(){
     const value = prompt("Enter a value to push:");
@@ -13,7 +40,7 @@ function pushStack(){
 }
 
 function popStack(){
-    if(stack.length>0){
+    if(!stack.isEmpty()){
         stack.pop();
         const container = document.getElementById("stack-container");
         container.removeChild(container.lastElementChild);
@@ -24,6 +51,9 @@ function popStack(){
 
 function resetStack(){
     const container = document.getElementById("stack-container");
-    container.innerHTML = "";
-    stack.length = 0 ;
+    const booleanValue = prompt("Do you want to clear stack? Type 'yes' to confirm:");
+    if (booleanValue && booleanValue.toLowerCase() === "yes") {
+        stack.clear();
+        document.getElementById("stack-container").innerHTML = "";
+    }
 }
