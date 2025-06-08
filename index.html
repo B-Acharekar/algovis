@@ -3,51 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>AlgoVis – Data Structure Visualizer</title>
   </head>
-  <body>
-    <h1>AlgoVis – Data Structure Visualizer</h1>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+      <h1 class="text-4xl font-bold text-center text-indigo-600 mb-10">
+        AlgoVis – Data Structure Visualizer
+      </h1>
 
-    <!-- Stack Section -->
-    <section id="stack-section">
-      <h2>Stack</h2>
-      <div id="stack-container"></div>
-      <button onclick="pushStack()">Push</button>
-      <button onclick="popStack()">Pop</button>
-      <button onclick="resetStack()">Reset</button>
-    </section>
+      <!-- Stack Section -->
+      <section id="stack-section" class="bg-white shadow-md rounded-lg p-6 mb-10">
+        <h2 class="text-2xl font-semibold mb-4">Stack</h2>
+        <div id="stack-container" class="min-h-[60px] border-2 border-dashed border-gray-300 p-4 mb-4 rounded"></div>
+        <div class="space-x-2">
+          <button onclick="pushStack()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">
+            Push
+          </button>
+          <button onclick="popStack()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+            Pop
+          </button>
+          <button onclick="resetStack()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded">
+            Reset
+          </button>
+        </div>
+      </section>
 
-    <hr />
+      <!-- Queue Section -->
+      <section id="queue-section" class="bg-white shadow-md rounded-lg p-6 mb-10">
+        <h2 class="text-2xl font-semibold mb-4">Queue</h2>
+        <div id="queue-container" class="min-h-[60px] border-2 border-dashed border-gray-300 p-4 mb-4 rounded"></div>
+        <div class="space-x-2">
+          <button onclick="enqueue()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">
+            Enqueue
+          </button>
+          <button onclick="dequeue()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+            Dequeue
+          </button>
+          <button onclick="resetQueue()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded">
+            Reset
+          </button>
+        </div>
+      </section>
 
-    <!-- Queue Section -->
-    <section id="queue-section">
-      <h2>Queue</h2>
-      <div id="queue-container"></div>
-      <button onclick="enqueue()">Enqueue</button>
-      <button onclick="dequeue()">Dequeue</button>
-      <button onclick="resetQueue()">Reset</button>
-    </section>
+      <!-- Linked List Section -->
+      <section id="linkedlist-section" class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Linked List</h2>
+        <div id="linkedlist-container" class="min-h-[60px] border-2 border-dashed border-gray-300 p-4 mb-4 rounded"></div>
+        <div class="space-x-2">
+          <button onclick="insertNode()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+            Insert
+          </button>
+          <button onclick="deleteNode()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+            Delete
+          </button>
+          <button onclick="searchNode()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+            Search
+          </button>
+          <button onclick="resetLinkedList()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded">
+            Reset
+          </button>
+        </div>
+      </section>
 
-    <hr />
-
-    <!-- Linked List Section -->
-    <section id="linkedlist-section">
-      <h2>Linked List</h2>
-      <div id="linkedlist-container"></div>
-      <button onclick="insertNode()">Insert</button>
-      <button onclick="deleteNode()">Delete</button>
-      <button onclick="searchNode()">Search</button>
-      <button onclick="resetLinkedList()">Reset</button>
-    </section>
-
-    <!-- Optional Input Modal or Prompt Area -->
-    <div id="input-area">
-      <!-- JS will use prompt or modal to get values -->
+      <!-- Input Area -->
+      <div id="input-area" class="mt-10">
+        <!-- JS Modal/Prompt input can be shown here -->
+      </div>
     </div>
 
-    <!-- JS Script Link -->
+    <!-- JS Scripts -->
     <script src="script.js"></script>
     <script src="components/stack.js"></script>
     <script src="components/queue.js"></script>
