@@ -19,7 +19,7 @@ export default function StackVisualizer() {
     };
 
     const handlePop = () => setStack((prev) => prev.slice(0, -1));
-    
+
     const handlePeek = () => {
         if (stack.length === 0) return showToast('Stack is empty');
         setPeeked(stack[stack.length - 1]);
@@ -40,7 +40,7 @@ export default function StackVisualizer() {
                 onReset={handleReset}
             />
 
-            <div className="flex flex-col-reverse items-center mt-10 space-y-2 space-y-reverse">
+            <div className="flex flex-col-reverse items-center mt-8 gap-3">
                 <AnimatePresence>
                     {stack.map((item, index) => (
                         <motion.div
@@ -50,13 +50,14 @@ export default function StackVisualizer() {
                             exit={{ opacity: 0, scale: 0.8, y: 20 }}
                             transition={{ duration: 0.3 }}
                             layout
-                            className="bg-blue-400 text-white w-32 text-center py-2 rounded shadow-md"
+                            className="bg-blue-500 text-white text-center py-2 px-4 w-32 sm:w-40 rounded shadow-md text-sm sm:text-base"
                         >
                             {item}
                         </motion.div>
                     ))}
                 </AnimatePresence>
             </div>
+
         </div>
     );
 }

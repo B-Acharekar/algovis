@@ -20,25 +20,26 @@ export default function ControlPanel({
   onReset,
 }: ControlPanelProps) {
   return (
-    <div className="flex flex-wrap gap-2 justify-center items-center mb-4">
+    <div className="flex flex-wrap gap-2 justify-center items-center w-full px-4 mt-4">
       <input
         type="text"
         value={value}
         onChange={(e) => onValueChange(e.target.value)}
         placeholder="Value"
-        className="border rounded px-3 py-1"
+        className="border border-gray-400 rounded px-3 py-2 text-sm w-full sm:w-40"
       />
       <input
         type="number"
         value={index}
         onChange={(e) => onIndexChange(e.target.value)}
         placeholder="Index"
-        className="border rounded px-3 py-1 w-24"
+        className="border border-gray-400 rounded px-3 py-2 text-sm w-full sm:w-24"
       />
-      <button onClick={onInsert} className="bg-purple-500 text-white px-4 py-1 rounded">Insert</button>
-      <button onClick={onDelete} className="bg-red-500 text-white px-4 py-1 rounded">Delete</button>
-      <button onClick={onSearch} className="bg-blue-500 text-white px-4 py-1 rounded">Search</button>
-      <button onClick={onReset} className="bg-gray-600 text-white px-4 py-1 rounded">Reset</button>
+      <button onClick={onInsert} className="btn-purple">Insert</button>
+      <button onClick={onDelete} className="btn-red">Delete</button>
+      <button onClick={onSearch} className="btn-blue">Search</button>
+      <button onClick={onReset} className="btn-gray">Reset</button>
     </div>
   );
 }
+

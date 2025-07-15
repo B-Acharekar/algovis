@@ -171,25 +171,31 @@ export default function LinkedListVisualizer() {
                 onReset={handleReset}
             />
 
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
-                <AnimatePresence>
-                    {renderList.map((item, i) => (
-                        <div className="flex items-center" key={item + i + renderList.length}>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.6 }}
-                                transition={{ duration: 0.3 }}
-                                className={`px-6 py-3 rounded-lg shadow-md font-semibold text-white min-w-[80px] text-center ${highlighted === i ? 'bg-yellow-500' : 'bg-purple-600'
-                                    }`}
-                            >
-                                {item}
-                            </motion.div>
-                            {i !== renderList.length - 1 && <ArrowRight className="text-purple-600 w-6 h-6 mx-2" />}
-                        </div>
-                    ))}
-                </AnimatePresence>
+            <div className="w-full max-w-7xl px-4 mt-4 overflow-x-auto">
+                <div className="flex items-center gap-4 justify-start min-w-[300px] pb-4">
+                    <AnimatePresence>
+                        {renderList.map((item, i) => (
+                            <div className="flex items-center" key={item + i + renderList.length}>
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.6 }}
+                                    transition={{ duration: 0.3 }}
+                                    className={`px-5 py-2 rounded-lg shadow-md font-semibold text-white min-w-[70px] text-center text-sm sm:text-base ${highlighted === i ? 'bg-yellow-500' : 'bg-purple-600'
+                                        }`}
+                                >
+                                    {item}
+                                </motion.div>
+
+                                {i !== renderList.length - 1 && (
+                                    <ArrowRight className="text-purple-500 w-5 h-5 mx-2 sm:mx-3" />
+                                )}
+                            </div>
+                        ))}
+                    </AnimatePresence>
+                </div>
             </div>
+
         </div>
     );
 }

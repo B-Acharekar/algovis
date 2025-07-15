@@ -25,7 +25,7 @@ export default function QueueVisualizer() {
   };
 
   const handlePeek = () => {
-    if (queue.length === 0) return showToast('Stack is empty');
+    if (queue.length === 0) return showToast('Queue is empty');
     setPeeked(queue[0]);
   };
 
@@ -49,19 +49,9 @@ export default function QueueVisualizer() {
         Queue Size: <span className="font-semibold text-green-600">{queue.length}</span>
       </div>
 
-      {/* Front Pointer */}
-      {queue.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-8 text-xs text-green-800 font-semibold"
-        >
-        </motion.div>
-      )}
-
       {/* Queue Items */}
-      <div className="mt-2 w-full max-w-5xl px-4">
-        <div className="flex flex-wrap justify-center items-center gap-4">
+      <div className="mt-4 w-full max-w-6xl px-4 overflow-x-auto">
+        <div className="flex items-center gap-4 min-w-[300px]">
           <AnimatePresence mode="popLayout">
             {queue.map((item, index) => (
               <motion.div
@@ -70,15 +60,13 @@ export default function QueueVisualizer() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="relative bg-green-500 text-white px-6 py-3 rounded-lg shadow font-semibold"
+                className="relative bg-green-500 text-white px-6 py-3 rounded-lg shadow font-semibold min-w-[80px] text-center"
               >
                 {item}
-
-                {/* Arrow (except last item) */}
                 {index < queue.length - 1 && (
                   <ArrowRight
-                    className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 text-gray-400"
-                    size={24}
+                    className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                    size={20}
                   />
                 )}
               </motion.div>

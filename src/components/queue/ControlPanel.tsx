@@ -16,7 +16,7 @@ export default function QueueControlPanel({
   onReset,
 }: QueueControlPanelProps) {
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2 justify-center items-center mt-4 w-full px-2">
       <input
         type="text"
         value={input}
@@ -27,13 +27,13 @@ export default function QueueControlPanel({
             onEnqueue();
           }
         }}
-        className="border border-gray-400 rounded px-2 py-1"
+        className="border border-gray-400 rounded px-3 py-2 w-full sm:w-40"
         placeholder="Enter value"
       />
-      <button onClick={onEnqueue} className="bg-green-500 text-white px-4 py-1 rounded">Enqueue</button>
-      <button onClick={onDequeue} className="bg-red-500 text-white px-4 py-1 rounded">Dequeue</button>
-      <button onClick={onPeek} className="bg-blue-500 text-white px-4 py-1 rounded">Peek</button>
-      <button onClick={onReset} className="bg-gray-600 text-white px-4 py-1 rounded">Reset</button>
+      <button onClick={onEnqueue} className="btn-green">Enqueue</button>
+      <button onClick={onDequeue} className="btn-red">Dequeue</button>
+      <button onClick={onPeek} className="btn-blue">Peek</button>
+      <button onClick={onReset} className="btn-gray">Reset</button>
     </div>
   );
 }
